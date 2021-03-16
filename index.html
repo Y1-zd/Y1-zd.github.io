@@ -180,39 +180,39 @@
 <hr>
 <p>详细步骤如下：</p>
 <ol>
-<li><p>首先，打开IDEA，点击New Project来创建新项目。<br><img src="/.com//1.PNG"></p>
+<li><p>首先，打开IDEA，点击New Project来创建新项目。<br><img src="/image/1.PNG"></p>
 </li>
-<li><p>因为版本各异，建议是先创建Java普通项目。<br><img src="/.com//2.PNG"></p>
+<li><p>因为版本各异，建议是先创建Java普通项目。<br><img src="/image/2.PNG"></p>
 </li>
-<li><p>随后，为项目命名。<br><img src="/.com//3.PNG"></p>
+<li><p>随后，为项目命名。<br><img src="/image/3.PNG"></p>
 </li>
-<li><p>这时，本项目还是普通的项目结构，我们要把他它变成Web项目，在项目右键，选择“Add Framework Support…”。<br><img src="/.com//4.PNG"></p>
+<li><p>这时，本项目还是普通的项目结构，我们要把他它变成Web项目，在项目右键，选择“Add Framework Support…”。<br><img src="/image/4.PNG"></p>
 </li>
-<li><p>看到“Add Framework Support…”界面，点击“Java EE”，在右侧选择版本Java EE 8。<br><img src="/.com//5.PNG"></p>
+<li><p>看到“Add Framework Support…”界面，点击“Java EE”，在右侧选择版本Java EE 8。<br><img src="/image/5.PNG"></p>
 </li>
-<li><p>随后点击Web Application(4.0)，之前选择Java EE 8版本才能选择4.0，并且勾选下方的Create web.xml，方便配置servlet。<br><img src="/.com//6.PNG"></p>
+<li><p>随后点击Web Application(4.0)，之前选择Java EE 8版本才能选择4.0，并且勾选下方的Create web.xml，方便配置servlet。<br><img src="/image/6.PNG"></p>
 </li>
-<li><p>完成后，在左侧会看到IDEA的Web结构。<br><img src="/.com//7.PNG"></p>
+<li><p>完成后，在左侧会看到IDEA的Web结构。<br><img src="/image/7.PNG"></p>
 </li>
-<li><p>点击右上角的“Add Configuration…”，在“Run/Debug Configurations”界面中点击左上角的加号，找到Tomcat Server中选择本地Local Tomcat。<br><img src="/.com//8.PNG"></p>
+<li><p>点击右上角的“Add Configuration…”，在“Run/Debug Configurations”界面中点击左上角的加号，找到Tomcat Server中选择本地Local Tomcat。<br><img src="/image/8.PNG"></p>
 </li>
-<li><p>确定后，会出现如图界面，其中有需要注意的几个点，Name可以配置Tomcat名字，Application server是用来选择在你电脑中的Tomcat，After launch勾选后会自动打开URL界面。完成后点击下方的“Fix”。<br><img src="/.com//9.PNG"></p>
+<li><p>确定后，会出现如图界面，其中有需要注意的几个点，Name可以配置Tomcat名字，Application server是用来选择在你电脑中的Tomcat，After launch勾选后会自动打开URL界面。完成后点击下方的“Fix”。<br><img src="/image/9.PNG"></p>
 </li>
-<li><p>会跳转到同界面的另一个Deployment界面，会默认在你点击了fix之后配置了artifact，在下方的Application context是你的项目url，可以配置成“/”方便之后的使用。<br><img src="/.com//10.PNG"></p>
+<li><p>会跳转到同界面的另一个Deployment界面，会默认在你点击了fix之后配置了artifact，在下方的Application context是你的项目url，可以配置成“/”方便之后的使用。<br><img src="/image/10.PNG"></p>
 </li>
-<li><p>点击OK后，我们确保一下，回到Project Structure中，查看Artifact中，查看“JavaWeb:war exploded”，确认它的type是Web Application:Exploded。<br><img src="/.com//11.PNG"></p>
+<li><p>点击OK后，我们确保一下，回到Project Structure中，查看Artifact中，查看“JavaWeb:war exploded”，确认它的type是Web Application:Exploded。<br><img src="/image/11.PNG"></p>
 </li>
-<li><p>同时，我们右键Available Elements中我们的JavaWeb项目，选择Put into Output Root，右侧有“WEB-INF”时才能确保我们项目结构搭好了。<br><img src="/.com//12.PNG"></p>
+<li><p>同时，我们右键Available Elements中我们的JavaWeb项目，选择Put into Output Root，右侧有“WEB-INF”时才能确保我们项目结构搭好了。<br><img src="/image/12.PNG"></p>
 </li>
-<li><p>回到IDEA主页面，在我们的项目中，找到WEB-INF,右键新建两个文件夹：lib和classes。<br>lib用来存放项目的jar，classes用来存放编译后的java文件。<br>我就有很多次是因为没有配置到classes当输出文件夹，才会出现404和500状态码。<br><img src="/.com//13.PNG"></p>
+<li><p>回到IDEA主页面，在我们的项目中，找到WEB-INF,右键新建两个文件夹：lib和classes。<br>lib用来存放项目的jar，classes用来存放编译后的java文件。<br>我就有很多次是因为没有配置到classes当输出文件夹，才会出现404和500状态码。<br><img src="/image/13.PNG"></p>
 </li>
-<li><p>我们进入Project Structure中，左侧选择Project，在右侧找到Project compiler output（项目编译输出），改为项目中WEB-INF/classes。<br><img src="/.com//14.PNG"></p>
+<li><p>我们进入Project Structure中，左侧选择Project，在右侧找到Project compiler output（项目编译输出），改为项目中WEB-INF/classes。<br><img src="/image/14.PNG"></p>
 </li>
-<li><p>在Modules中，选中项目，找到Dependencies，点击下方加号，添加jar，选中我们的lib文件夹。之后勾选并点击OK。（可能会遇到提示说系统不知道文件夹是用来干嘛的，就找其中表示lib的勾选。）<br><img src="/.com//16.PNG"></p>
+<li><p>在Modules中，选中项目，找到Dependencies，点击下方加号，添加jar，选中我们的lib文件夹。之后勾选并点击OK。（可能会遇到提示说系统不知道文件夹是用来干嘛的，就找其中表示lib的勾选。）<br><img src="/image/16.PNG"></p>
 </li>
-<li><p>回到主页面，找到lib，右键并查找Add as library…，选中后点击OK，大体就搭建完成了。<br><img src="/.com//18.PNG"></p>
+<li><p>回到主页面，找到lib，右键并查找Add as library…，选中后点击OK，大体就搭建完成了。<br><img src="/image/18.PNG"></p>
 </li>
-<li><p>最后测试，可以运行。<br><img src="/.com//17.PNG"></p>
+<li><p>最后测试，可以运行。<br><img src="/image/17.PNG"></p>
 </li>
 </ol>
 <hr>
